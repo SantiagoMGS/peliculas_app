@@ -10,12 +10,18 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: 'Peliculas App',
-        debugShowCheckedModeBanner: false,
-        initialRoute: 'home',
-        routes: {
-          'home': (_) => const HomeScreen(),
-          'details': (_) => const DetailsScreen(),
-        });
+      title: 'Peliculas App',
+      debugShowCheckedModeBanner: true,
+      initialRoute: 'home',
+      routes: {
+        'home': (_) => const HomeScreen(),
+        'details': (_) => DetailsScreen(),
+      },
+      theme: ThemeData.light().copyWith(
+        appBarTheme: const AppBarTheme(
+          color: Colors.deepPurple,
+        ),
+      ),
+    );
   }
 }
