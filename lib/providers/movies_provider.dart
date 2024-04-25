@@ -14,6 +14,7 @@ class MoviesProvider extends ChangeNotifier {
 
   MoviesProvider() {
     getOnDisplayMovies();
+    getPopularMovies();
   }
 
   getOnDisplayMovies() async {
