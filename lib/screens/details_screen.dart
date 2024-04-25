@@ -40,8 +40,15 @@ class _CustomAppBar extends StatelessWidget {
         title: Container(
           width: double.infinity,
           alignment: Alignment.bottomCenter,
+          padding: const EdgeInsets.only(bottom: 10),
           color: Colors.black12,
-          child: Text('movie.title', style: TextStyle(fontSize: 16)),
+          child: Text(
+            'movie.title',
+            style: TextStyle(fontSize: 16),
+            overflow: TextOverflow.ellipsis,
+            maxLines: 2,
+            textAlign: TextAlign.center,
+          ),
         ),
         background: FadeInImage(
           placeholder: AssetImage('assets/loading.gif'),
