@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:peliculas_app/widgets/widgets.dart';
 
 class DetailsScreen extends StatelessWidget {
   // TODO: Cambiar luego por una instancia de movie
@@ -12,7 +13,13 @@ class DetailsScreen extends StatelessWidget {
       slivers: [
         _CustomAppBar(),
         SliverList(
-          delegate: SliverChildListDelegate([_PosterAndTitle()]),
+          delegate: SliverChildListDelegate([
+            _PosterAndTitle(),
+            _OverView(),
+            _OverView(),
+            _OverView(),
+            CastingCards()
+          ]),
         )
       ],
     ));
@@ -89,6 +96,20 @@ class _PosterAndTitle extends StatelessWidget {
             ],
           )
         ],
+      ),
+    );
+  }
+}
+
+class _OverView extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: EdgeInsets.symmetric(horizontal: 30, vertical: 10),
+      child: Text(
+        'Quis anim minim ipsum ullamco laboris aliqua sit aliquip sit excepteur officia do nulla ad. Qui consequat eiusmod fugiat esse fugiat magna excepteur quis ex non enim. Veniam veniam commodo officia irure nulla nulla minim sunt sint duis sint culpa non. Minim eu veniam dolore incididunt elit aute qui sit aliquip sunt deserunt consectetur excepteur. Esse dolore nulla reprehenderit ut aliquip elit proident. Amet nulla fugiat minim nulla Lorem aliqua.',
+        textAlign: TextAlign.justify,
+        style: Theme.of(context).textTheme.titleMedium,
       ),
     );
   }
