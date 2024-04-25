@@ -49,6 +49,7 @@ class _CustomAppBar extends StatelessWidget {
 class _PosterAndTitle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final TextTheme textTheme = Theme.of(context).textTheme;
     return Container(
       margin: const EdgeInsets.only(top: 20),
       padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -68,13 +69,13 @@ class _PosterAndTitle extends StatelessWidget {
             children: [
               Text(
                 'movie.title',
-                style: Theme.of(context).textTheme.headlineSmall,
+                style: textTheme.headlineSmall,
                 overflow: TextOverflow.ellipsis,
                 maxLines: 2,
               ),
               Text(
                 'movie.originalTitle',
-                style: Theme.of(context).textTheme.titleMedium,
+                style: textTheme.titleMedium,
                 overflow: TextOverflow.ellipsis,
                 maxLines: 1,
               ),
@@ -82,8 +83,7 @@ class _PosterAndTitle extends StatelessWidget {
                 children: [
                   Icon(Icons.star_outline, size: 15, color: Colors.grey),
                   SizedBox(width: 5),
-                  Text('movie.voteAverage',
-                      style: Theme.of(context).textTheme.bodySmall)
+                  Text('movie.voteAverage', style: textTheme.bodySmall)
                 ],
               ),
             ],
